@@ -1,0 +1,50 @@
+.customBox {
+    width: 32%;
+    min-height: 100px;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .customBox {
+        width: 48%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .customBox {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
+.boxText {
+    font-size: larger !important;
+    font-weight: bolder !important;
+    text-align: center !important;
+    text-decoration: none !important;
+}
+
+.customBox:hover {
+    background-color: #64CCC9 !important;
+}
+
+.boxText .sapMLnkText {
+    color: #000 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+.customBox:hover .boxText .sapMLnkText {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+.Title { 
+    font-size: xx-large !important; 
+}

@@ -1,0 +1,22 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+          width="100%"
+          displayBlock="true"
+          controllerName="com.winslow.yve.Secondary_Resources.Card">
+
+    
+    <VBox class="sapUiSmallMargin">
+
+        <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin"/>
+
+        <FlexBox  wrap="Wrap"  justifyContent="Start" alignItems="Stretch" width="100%" items="{cardModel>/cards}">
+
+            <VBox class="customBox">
+                <Link text="{parts: [{ path: 'cardModel>description' },{ path: 'cardModel>name' }],formatter: '.Formatter.linkText'}" wrapping="true" class="boxText sapUiTinyMargin" href="{cardModel>url}" target="_blank" />       
+            </VBox>
+
+        </FlexBox>
+
+    </VBox>
+    
+</mvc:View>
