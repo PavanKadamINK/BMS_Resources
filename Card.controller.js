@@ -3,11 +3,11 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"./formatter"
-], function (MessageToast, Controller, JSONModel,Formatter) {
+], function (MessageToast, Controller, JSONModel, Formatter) {
 	"use strict";
 
 	return Controller.extend("com.winslow.yve.Secondary_Resources.Card", {
-		Formatter:Formatter,
+		Formatter: Formatter,
 		onInit: function () {
 			var oModel = new JSONModel({});
 			this.getView().setModel(oModel, "cardModel");
@@ -55,7 +55,7 @@ sap.ui.define([
 						},
 						success: function (oFilesData) {
 							debugger;
-							var oModel = new JSONModel({ cards: oFilesData.results,Title:Title });
+							var oModel = new JSONModel({ cards: oFilesData.results, Title: Title });
 							this.getView().setModel(oModel, "cardModel");
 							oView.setBusy(false);
 						}.bind(this),
@@ -75,7 +75,22 @@ sap.ui.define([
 					oView.setBusy(false);
 				}
 			});
+		},
+		handleFilePress: function (oEvent) {
+			var oItem = oEvent.getSource();
+			var oContext = oItem.getBindingContext("cardModel");
+
+			if (!oContext) return;
+
+			var sUrl = oContext.getProperty("url");
+
+			if (sUrl) {
+				window.open(sUrl, "_blank");
+			} else {
+				sap.m.MessageToast.show("Document not available");
+			}
 		}
+
 
 	});
 });

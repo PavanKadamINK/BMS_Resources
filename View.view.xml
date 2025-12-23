@@ -3,9 +3,36 @@
           width="100%"
           displayBlock="true"
           controllerName="com.winslow.yve.Secondary_Resources.Card">
-
     
-    <VBox class="sapUiSmallMargin">
+        <VBox class="sapUiSmallMargin">
+            <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin" />
+            <List id="idOTFilesList" width="100%" growing="true" items="{cardModel>/cards}">
+                <items>
+                    <CustomListItem type="Active" press="handleFilePress">
+                        <HBox width="100%" alignItems="Center" justifyContent="SpaceBetween"
+                            class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+                            <!-- LEFT: Icon + Title + Description -->
+                            <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                                <core:Icon src="{path: 'cardModel>mime', formatter: '.Formatter.doctypeicon'}" size="2rem" class="sapUiSmallMarginEnd" />
+                                <VBox>
+                                    <Title text="{cardModel>name}" wrapping="true"/>
+                                    <Text text="{path:'cardModel>description', formatter:'.Formatter.descriptionOrPreview'}" wrapping="true" />
+                                </VBox>
+                            </HBox>
+                            <!-- RIGHT: Size (top) + Expiry (bottom) -->
+                            <VBox alignItems="End" justifyContent="Center">
+                                <Text text="{cardModel>size}" class="fileSizeText" />
+                                <Text text="{path:'cardModel>expirydate', formatter: '.Formatter.expiryOnly'}" class="sapUiTinyMarginTop" />
+                            </VBox>
+                        </HBox>
+                    </CustomListItem>
+                </items>
+            </List>
+        </VBox>
+
+
+
+    <!-- <VBox class="sapUiSmallMargin">
 
         <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin"/>
 
@@ -17,6 +44,6 @@
 
         </FlexBox>
 
-    </VBox>
+    </VBox> -->
     
 </mvc:View>

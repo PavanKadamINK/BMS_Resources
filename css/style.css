@@ -1,4 +1,4 @@
-.customBox {
+/* .customBox {
     width: 32%;
     min-height: 100px;
     background-color: #ebebeb;
@@ -9,14 +9,12 @@
     box-sizing: border-box;
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
     .customBox {
         width: 48%;
     }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
     .customBox {
         width: 100%;
@@ -44,7 +42,11 @@
     color: #ffffff !important;
     text-shadow: none !important;
     opacity: 1 !important;
-}
+} */
+
 .Title { 
     font-size: xx-large !important; 
+}
+.boldText {
+    font-weight: bold;
 }
