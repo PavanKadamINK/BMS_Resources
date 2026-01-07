@@ -47,6 +47,6 @@
 .Title { 
     font-size: xx-large !important; 
 }
-.boldText {
-    font-weight: bold;
+.TitlePoint {
+    cursor: pointer !important;
 }

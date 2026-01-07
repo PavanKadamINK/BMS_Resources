@@ -15,7 +15,7 @@
                             <HBox alignItems="Center" class="sapUiSmallMarginEnd">
                                 <core:Icon src="{path: 'cardModel>mime', formatter: '.Formatter.doctypeicon'}" size="2rem" class="sapUiSmallMarginEnd" />
                                 <VBox>
-                                    <Title text="{cardModel>name}" wrapping="true"/>
+                                    <Title text="{cardModel>name}" wrapping="true" class="TitlePoint"/>
                                     <Text text="{path:'cardModel>description', formatter:'.Formatter.descriptionOrPreview'}" wrapping="true" />
                                 </VBox>
                             </HBox>
