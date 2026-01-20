@@ -43,19 +43,15 @@ sap.ui.define([
 			const oView = this.getView();
 			oView.setBusy(true);
 
-			// 1️⃣ First OData call
 			this.getOwnerComponent().getModel("JAM").read(`/NavTabs('${id}')`, {
 				success: function (oNavData) {
-					debugger;
-
-					var Title = oNavData.Title;
-					this.getOwnerComponent().getModel().read("/GetOTFilesByFolder", {
+					this.getOwnerComponent().getModel().read("/SearchOTFiles", {
 						urlParameters: {
-							folder: oNavData.Title
+							sKey: oNavData.Title
 						},
 						success: function (oFilesData) {
 							debugger;
-							var oModel = new JSONModel({ cards: oFilesData.results, Title: Title });
+							var oModel = new JSONModel({ cards: oFilesData.results, Title: oNavData.Title });
 							this.getView().setModel(oModel, "cardModel");
 							oView.setBusy(false);
 						}.bind(this),
@@ -65,7 +61,6 @@ sap.ui.define([
 							oView.setBusy(false);
 						}
 					});
-
 				}.bind(this),
 				error: function (oError) {
 					debugger;
