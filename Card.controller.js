@@ -90,7 +90,7 @@ sap.ui.define([
 			var sUrl = oContext.getProperty("url");
 
 			if (sUrl) {
-				window.open(sUrl, "_blank");
+				sap.m.URLHelper.redirect(sUrl, true);
 			} else {
 				sap.m.MessageToast.show("Document not available");
 			}
