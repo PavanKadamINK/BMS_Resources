@@ -9,6 +9,15 @@ sap.ui.define([
 	return Controller.extend("com.winslow.yve.Secondary_Resources.Card", {
 		Formatter: Formatter,
 		onInit: function () {
+			var oVBox = this.getView().byId("myClickableVBox");
+
+			oVBox.addEventDelegate({
+				onclick: function (oEvent) {
+					// Trigger your logic here
+					this.handleFilePress(oEvent);
+				}.bind(this)
+			});
+
 			var oModel = new JSONModel({});
 			this.getView().setModel(oModel, "cardModel");
 
@@ -72,9 +81,10 @@ sap.ui.define([
 			});
 		},
 		handleFilePress: function (oEvent) {
-			var oItem = oEvent.getSource();
-			var oContext = oItem.getBindingContext("cardModel");
+			debugger;
+			var oItem = oEvent.getSource ? oEvent.getSource() : oEvent.srcControl;
 
+			var oContext = oItem.getBindingContext("cardModel");
 			if (!oContext) return;
 
 			var sUrl = oContext.getProperty("url");

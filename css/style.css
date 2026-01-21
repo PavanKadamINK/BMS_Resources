@@ -1,12 +1,13 @@
-/* .customBox {
+.customBox {
     width: 32%;
     min-height: 100px;
-    background-color: #ebebeb;
+    background-color: #888B8D;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 7px;
     box-sizing: border-box;
+    cursor: pointer !important;
 }
 
 @media (max-width: 1024px) {
@@ -34,19 +35,21 @@
 }
 
 .boxText .sapMLnkText {
-    color: #000 !important;
+    color: #ffffff !important;
     text-shadow: none !important;
     opacity: 1 !important;
 }
 .customBox:hover .boxText .sapMLnkText {
-    color: #ffffff !important;
     text-shadow: none !important;
     opacity: 1 !important;
-} */
+}
 
 .Title { 
     font-size: xx-large !important; 
 }
 .TitlePoint {
     cursor: pointer !important;
+}
+.ExpiryDate {
+    color: #ffffff !important;
 }

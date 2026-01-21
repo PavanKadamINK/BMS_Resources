@@ -4,14 +4,13 @@
           displayBlock="true"
           controllerName="com.winslow.yve.Secondary_Resources.Card">
     
-        <VBox class="sapUiSmallMargin">
+        <!-- <VBox class="sapUiSmallMargin">
             <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin" />
             <List id="idOTFilesList" width="100%" growing="true" items="{cardModel>/cards}">
                 <items>
                     <CustomListItem type="Active" press="handleFilePress">
                         <HBox width="100%" alignItems="Center" justifyContent="SpaceBetween"
                             class="sapUiSmallMarginTop sapUiSmallMarginBottom">
-                            <!-- LEFT: Icon + Title + Description -->
                             <HBox alignItems="Center" class="sapUiSmallMarginEnd">
                                 <core:Icon src="{path: 'cardModel>mime', formatter: '.Formatter.doctypeicon'}" size="2rem" class="sapUiSmallMarginEnd" />
                                 <VBox>
@@ -19,7 +18,6 @@
                                     <Text text="{path:'cardModel>description', formatter:'.Formatter.descriptionOrPreview'}" wrapping="true" />
                                 </VBox>
                             </HBox>
-                            <!-- RIGHT: Size (top) + Expiry (bottom) -->
                             <VBox alignItems="End" justifyContent="Center">
                                 <Text text="{cardModel>size}" class="fileSizeText" />
                                 <Text text="{path:'cardModel>expirydate', formatter: '.Formatter.expiryOnly'}" class="sapUiTinyMarginTop" />
@@ -28,22 +26,22 @@
                     </CustomListItem>
                 </items>
             </List>
-        </VBox>
+        </VBox> -->
 
 
 
-    <!-- <VBox class="sapUiSmallMargin">
+    <VBox class="sapUiSmallMargin">
 
         <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin"/>
 
-        <FlexBox  wrap="Wrap"  justifyContent="Start" alignItems="Stretch" width="100%" items="{cardModel>/cards}">
+        <FlexBox id="myClickableVBox" wrap="Wrap"  justifyContent="Start" alignItems="Stretch" width="100%" items="{cardModel>/cards}">
 
             <VBox class="customBox">
-                <Link text="{parts: [{ path: 'cardModel>description' },{ path: 'cardModel>name' }],formatter: '.Formatter.linkText'}" wrapping="true" class="boxText sapUiTinyMargin" href="{cardModel>url}" target="_blank" />       
+                <Link text="{parts: [{ path: 'cardModel>description' },{ path: 'cardModel>name' }],formatter: '.Formatter.linkText'}" wrapping="true" class="boxText sapUiTinyMargin"/>  
             </VBox>
 
         </FlexBox>
 
-    </VBox> -->
+    </VBox>
     
 </mvc:View>
