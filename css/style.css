@@ -30,8 +30,16 @@
     text-decoration: none !important;
 }
 
-.customBox:hover {
+/* .customBox:hover {
     background-color: #64CCC9 !important;
+} */
+
+.role-yve .customBox:hover {
+    background-color: #64CCC9 !important;
+}
+
+.role-winslow .customBox:hover {
+    background-color: #ebab00 !important;
 }
 
 .boxText .sapMLnkText {

@@ -39,9 +39,33 @@ sap.ui.define([
 				// 4. Wait for metadata to be ready before calling .read()
 				oODataModel.metadataLoaded().then(function () {
 					this._loadData();
+					this.AssignRole();
 				}.bind(this));
 			}
 		},
+
+		AssignRole: function () {
+            var oModel = this.getOwnerComponent().getModel();
+
+            oModel.callFunction("/getUserRole", {
+                method: "GET",
+                success: function (oData) {
+                    debugger;
+                    var role = oData.getUserRole || "Winslow";
+
+                    var oFlex = this.byId("myClickableVBox");
+
+                    if (role === "YVE") {
+                        oFlex.addStyleClass("role-yve");
+                    } else {
+                        oFlex.addStyleClass("role-winslow");
+                    }
+                }.bind(this),
+                error: function () {
+                    sap.m.MessageToast.show("Failed to fetch user role");
+                }
+            });
+        },
 
 		_loadData: function () {
 			debugger;
