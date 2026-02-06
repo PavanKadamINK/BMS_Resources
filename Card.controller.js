@@ -27,7 +27,7 @@ sap.ui.define([
 		},
 
 		_onModelArrival: function () {
-			debugger;
+			// debugger;
 			// Get the model from the Component
 			var oODataModel = this.getOwnerComponent().getModel();
 
@@ -45,30 +45,30 @@ sap.ui.define([
 		},
 
 		AssignRole: function () {
-            var oModel = this.getOwnerComponent().getModel();
+			var oModel = this.getOwnerComponent().getModel();
 
-            oModel.callFunction("/getUserRole", {
-                method: "GET",
-                success: function (oData) {
-                    debugger;
-                    var role = oData.getUserRole || "Winslow";
+			oModel.callFunction("/getUserRole", {
+				method: "GET",
+				success: function (oData) {
+					// debugger;
+					var role = oData.getUserRole || "Winslow";
 
-                    var oFlex = this.byId("myClickableVBox");
+					var oFlex = this.byId("myClickableVBox");
 
-                    if (role === "YVE") {
-                        oFlex.addStyleClass("role-yve");
-                    } else {
-                        oFlex.addStyleClass("role-winslow");
-                    }
-                }.bind(this),
-                error: function () {
-                    sap.m.MessageToast.show("Failed to fetch user role");
-                }
-            });
-        },
+					if (role === "YVE") {
+						oFlex.addStyleClass("role-yve");
+					} else {
+						oFlex.addStyleClass("role-winslow");
+					}
+				}.bind(this),
+				error: function () {
+					sap.m.MessageToast.show("Failed to fetch user role");
+				}
+			});
+		},
 
 		_loadData: function () {
-			debugger;
+			// debugger;
 
 			var url = window.location.href;
 			var id = url.split("workpage_tabs/")[1].split("?")[0];
@@ -89,14 +89,14 @@ sap.ui.define([
 							oView.setBusy(false);
 						}.bind(this),
 						error: function (oError) {
-							debugger;
+							// debugger;
 							sap.m.MessageToast.show("Error fetching OT files. Check console logs.");
 							oView.setBusy(false);
 						}
 					});
 				}.bind(this),
 				error: function (oError) {
-					debugger;
+					// debugger;
 					sap.m.MessageToast.show(
 						"Error fetching NavTabs. Check console logs."
 					);
@@ -104,8 +104,9 @@ sap.ui.define([
 				}
 			});
 		},
+
 		handleFilePress: function (oEvent) {
-			debugger;
+			// debugger;
 			var oItem = oEvent.getSource ? oEvent.getSource() : oEvent.srcControl;
 
 			var oContext = oItem.getBindingContext("cardModel");

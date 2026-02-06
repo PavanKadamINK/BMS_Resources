@@ -1,39 +1,57 @@
+/* --- Base Styles (Mobile First) --- */
 .customBox {
-    width: 32%;
-    min-height: 100px;
+    width: 100% !important;
+    /* Full width on mobile by default */
+    min-height: 110px;
+    height: auto !important;
     background-color: #888B8D;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 7px;
+    margin: 8px 0;
+    /* Vertical margin for mobile stacking */
+    padding: 15px;
     box-sizing: border-box;
     cursor: pointer !important;
-}
-
-@media (max-width: 1024px) {
-    .customBox {
-        width: 48%;
-    }
-}
-
-@media (max-width: 600px) {
-    .customBox {
-        width: 100%;
-        margin: 6px 0;
-    }
+    overflow: visible !important;
 }
 
 .boxText {
     font-size: larger !important;
-    font-weight: bolder !important;
+    font-weight: bold !important;
     text-align: center !important;
     text-decoration: none !important;
+    word-break: break-word !important;
+    text-shadow: none !important
+    /* Better than break-all for readability */
 }
 
-/* .customBox:hover {
-    background-color: #64CCC9 !important;
-} */
+.boxText .sapMLnkText {
+    color: #ffffff !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+}
 
+/* --- Tablet Styles (2 items per row) --- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .customBox {
+        width: calc(50% - 14px) !important;
+        /* Subtract margins */
+        margin: 7px;
+    }
+}
+
+/* --- Desktop Styles (3 items per row) --- */
+@media (min-width: 1025px) {
+    .customBox {
+        width: calc(33.33% - 14px) !important;
+        margin: 7px;
+    }
+}
+
+/* --- Hover Effects --- */
 .role-yve .customBox:hover {
     background-color: #64CCC9 !important;
 }
@@ -42,22 +60,8 @@
     background-color: #ebab00 !important;
 }
 
-.boxText .sapMLnkText {
-    color: #ffffff !important;
-    text-shadow: none !important;
-    opacity: 1 !important;
-}
-.customBox:hover .boxText .sapMLnkText {
-    text-shadow: none !important;
-    opacity: 1 !important;
+.Title {
+    font-size: 1.5rem !important;
 }
 
-.Title { 
-    font-size: xx-large !important; 
-}
-.TitlePoint {
-    cursor: pointer !important;
-}
-.ExpiryDate {
-    color: #ffffff !important;
-}
+/* Scales better than xx-large */

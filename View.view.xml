@@ -34,12 +34,22 @@
 
         <Title text="{cardModel>/Title}" level="H1" class="Title sapUiMediumMargin"/>
 
-        <FlexBox id="myClickableVBox" wrap="Wrap"  justifyContent="Start" alignItems="Stretch" width="100%" items="{cardModel>/cards}">
-
-            <VBox class="customBox">
-                <Link text="{parts: [{ path: 'cardModel>description' },{ path: 'cardModel>name' }],formatter: '.Formatter.linkText'}" wrapping="true" class="boxText sapUiTinyMargin"/>  
+        <FlexBox 
+            id="myClickableVBox" 
+            wrap="Wrap" 
+            justifyContent="Start" 
+            alignItems="Stretch" 
+            width="100%" 
+            items="{cardModel>/cards}"
+            class="sapUiTinyMarginTop">
+            
+            <VBox class="customBox" justifyContent="Center" alignItems="Center">
+                <Link 
+                    text="{parts: [{ path: 'cardModel>description' },{ path: 'cardModel>name' }], formatter: '.Formatter.linkText'}" 
+                    wrapping="true" 
+                    width="100%"
+                    class="boxText"/>  
             </VBox>
-
         </FlexBox>
 
     </VBox>
