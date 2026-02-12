@@ -83,23 +83,21 @@ sap.ui.define([
 							sKey: oNavData.Title
 						},
 						success: function (oFilesData) {
-							debugger;
+							// debugger;
 							var oModel = new JSONModel({ cards: oFilesData.results, Title: oNavData.Title });
 							this.getView().setModel(oModel, "cardModel");
 							oView.setBusy(false);
 						}.bind(this),
 						error: function (oError) {
 							// debugger;
-							sap.m.MessageToast.show("Error fetching OT files. Check console logs.");
+							sap.m.MessageToast.show("No item found with Title.");
 							oView.setBusy(false);
 						}
 					});
 				}.bind(this),
 				error: function (oError) {
 					// debugger;
-					sap.m.MessageToast.show(
-						"Error fetching NavTabs. Check console logs."
-					);
+					sap.m.MessageToast.show("No item found with Title");
 					oView.setBusy(false);
 				}
 			});
